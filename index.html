@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <link rel="icon" href="favicon.ico" sizes="32x32" />
+   <link rel="icon" href="favicon.ico" sizes="192x192" />
+   <!-- Igual para todos los REDI -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="author" content="Escuela Didáctica" />
+   <!-- cambiar para cada REDI - Title y content -->
+   <title>Armemos el Pesebre de Navidad - Escuela Didáctica</title>
+   <meta name="description"
+      content="Revivamos la tradición del pesebre de navidad, diviértete revelando los personajes y aprende junto a Escuela Didáctica." />
+   <!-- cambiar para cada REDI - href -->
+   <link rel="canonical" href="https://www.escueladidactica.com/navidad/2022" />
+   <!-- Igual para todos los REDI - -->
+   <meta name="robots" content="index, follow" />
+   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+   <meta property="og:locale" content="es_ES" />
+   <meta property="og:type" content="interactive" />
+   <!-- cambiar para cada REDI - content -->
+   <meta property="og:title" content="Armemos el Pesebre de Navidad - Escuela Didáctica" />
+   <meta property="og:description"
+      content="Revivamos la tradición del pesebre de navidad, diviértete revelando los personajes y aprende junto a Escuela Didáctica." />
+   <meta property="og:url" content="https://www.escueladidactica.com/navidad/2022" />
+   <!-- Igual para todos los REDI -->
+   <meta property="og:site_name" content="Armemos el Pesebre de Navidad - Escuela Didáctica" />
+   <meta property="og:image" content="https://www.escueladidactica.com/navidad/2022/img/miniatura.png" />
+   <meta property="og:image:width" content="720" />
+   <meta property="og:image:height" content="440" />
+   <meta name="twitter:card" content="summary_large_image" />
+   <!-- cambiar para cada REDI - content -->
+   <meta name="twitter:title" content="Armemos el Pesebre de Navidad - Escuela Didáctica" />
+   <meta name="twitter:description"
+      content="Revivamos la tradición del pesebre de navidad, diviértete revelando los personajes y aprende junto a Escuela Didáctica." />
+   <!-- Igual para todos los REDI -->
+   <meta name="twitter:image" content="https://www.escueladidactica.com/navidad/2022/img/miniatura.png" />
+
+   <!-- Hojas de estilos css -->
+   <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+   <link rel="stylesheet" href="css/restyle.css">
+   <link rel="stylesheet" href="css/redi.css">
+   <link rel="stylesheet" href="css/preload.css">
+   <link rel="stylesheet" href="css/include.css">
+   <link rel="stylesheet" href="css/estilos.css">
+   <link rel="stylesheet" href="css/modales.css">
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88376509-1"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+         dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-88376509-1');
+   </script>
+</head>
+
+<body>
+   <audio>
+      <source src="audio/intro.mp3" type="audio/mpeg">
+   </audio>
+   <article class="redi__contenedor redi--entrenamiento">
+
+      <header class="vuaHeader">
+         <div class="vuaHeader__logo">
+            <img class="vuaHeader__logoImg" src="img/logoEscuelDidactica.png" alt="Escuela Didáctica">
+         </div>
+         <div class="vuaHeader__content">
+            <span class="vuaHeader__breadCrumbs">Armemos el Pesebre de Navidad</span>
+            <p class="instruction__text">
+            Como es tradición cada diciembre armamos el pesebre para esperar la llegada del Niño Dios. Presiona cada tarjeta para descubrir un personaje, concéntrate y encuentra su pareja, así revelarás un personaje en el pesebre y descubrirás un dato curioso sobre esta tradición de navidad.
+            </p>
+            <!-- <button class="vuaHeader__close">
+               <img class="vuaHeader__closeIcon" src="img/times-solid.svg" alt="Cerrar">
+            </button> -->
+         </div>
+      </header>
+
+      <!-- <section class="instruction">
+      </section> -->
+
+      <section class="redi__contenido parejas">
+         <!-- contenido -->
+
+         <div class="parejas-contenedor">
+
+            <section class="parejas-contenedor-elementos">
+               <div id="game_board"></div>
+            </section>
+
+            <div class="reiniciar">
+               <!-- <button type="button" id="restart" onClick="init()" class="footer__reiniciar">Reiniciar</button> -->
+            </div>
+
+         </div>
+
+         <!-- Modal intro -->
+         <div class="modal_fade modalIntro" id="modalIntro" class="modal fade modalMensaje">
+            <div class="content_modal">
+
+               <img src="img/modal-intro.png" alt="Intro">
+
+               <div class="modal-footer">
+                  <div class="continuar">
+                     <button id="btnModalContinuar"
+                        class="button_modal btnPrimary introduccion__btnComenzar">Comenzar</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Fin Modal intro -->
+
+
+         <!-- Modal parejas -->
+         <div id="modal_game" class="modal fade modalParejas" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+               <div class="edModal__contenedor">
+                  <div class="modal-content">
+                     <div class="modal__columnas">
+                        <div class="modal__column1">
+                           <img src="img/baltazar.png" class="baltazar"></img>
+                           <img src="img/gaspar.png" class="gaspar"></img>
+                           <img src="img/melchor.png" class="melchor"></img>
+                           <img src="img/pastor.png" class="pastor"></img>
+                           <img src="img/jose.png" class="jose"></img>
+                           <img src="img/maria.png" class="maria"></img>
+                           <img src="img/jesus.png" class="jesus"></img>
+                           <img src="img/mula-buey.png" class="mula-buey"></img>
+                        </div>
+                        <div class="modal__column2">
+                           <h2 class="modal__titulo">Sabias que...</h2>
+                           <div class="modal__texto"></div>
+                           <img class="copo1" src="img/copo.png">
+                           <img class="copo2" src="img/copo.png">
+                           <button id="btn-close-modal" type="button" class="introduccion__btnContinuar"
+                              data-dismiss="modal">Continuar</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Fin Modal parejas -->
+
+         <!-- Modal final -->
+         <div class="feedback">
+            <div class="feedback__content">
+               <div class="feedback__columns">
+                  <div class="feedback__img"></div>
+                  <div class="feedback__textos">
+                     <p class="feedback__texto1">Armaste tu pesebre</p>
+                     <p class="feedback__texto3">Y junto con la esperanza de la llegada del Niño Dios te deseamos de todo corazón que ese regalo que tanto has anhelado llegue a ti en esta navidad.</p>
+                     <p class="feedback__texto3">Felices fiestas te desea:</p>
+                     <div class="textCenter">
+                        <img class="feedback__logo" src="img/logoEscuelDidactica.png" alt="Escuela Didáctica">
+                     </div>
+                     <a class="footer__reiniciar botonReiniciar" href="javascript:void(0)">Volver a intentar</a>
+                     </a>
+                  </div>
+               </div>
+               <!-- Compartir modal -->
+               <div class="modal__botonesCompartir">
+                  <span class="modal__compartir">Compartir</span>
+                  <!-- Botones para compartir en redes sociales -->
+                  <a href="https://twitter.com/intent/tweet?text=&url=https://www.escueladidactica.com/navidad/2022"
+                     target="_blank"><img src="img/twitter.svg" title="Compartir en Twitter"></a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.escueladidactica.com/navidad/2022&t="
+                     target="_blank"><img src="img/facebook.svg" title="Compartir en Facebook"></a>
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.escueladidactica.com/navidad/2022"
+                     target="_blank"><img src="img/linkedin.svg" title="Compartir en Linkedin"></a>
+                  <a class="btnShareWhatsApp" href="whatsapp://send?text=https://www.escueladidactica.com/navidad/2022"
+                     data-action="share/whatsapp/share"><img src="img/whatsapp.svg" /></a>
+                  <button class="btnCopy" data-clipboard-text="https://www.escueladidactica.com/navidad/2022">
+                     <img src="img/link.svg" title="Copiar el link">
+                     <div class="footerED__linkCopy"></div>
+                  </button>
+               </div>
+            </div>
+         </div>
+         <!-- Fin Modal final -->
+
+      </section>
+
+   </article>
+   <!-- Compartir -->
+
+   <div class="separador"></div>
+
+   <div class="footerED__shared">
+
+      <span class="footerED__sharedText">Compartir</span>
+      <!-- Botones para compartir en redes sociales -->
+      <a href="https://twitter.com/intent/tweet?text=&url=https://www.escueladidactica.com/navidad/2022"
+         target="_blank"><img src="img/sharedTwitter.png" title="Compartir en Twitter"></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.escueladidactica.com/navidad/2022&t="
+         target="_blank"><img src="img/sharedFacebook.png" title="Compartir en Facebook"></a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.escueladidactica.com/navidad/2022"
+         target="_blank"><img src="img/sharedLinkedin.png" title="Compartir en Linkedin"></a>
+      <a class="btnShareWhatsApp" href="whatsapp://send?text=https://www.escueladidactica.com/navidad/2022"
+         data-action="share/whatsapp/share"><img src="img/sharedWhastApp.png" /></a>
+      <button class="btnCopy" data-clipboard-text="https://www.escueladidactica.com/navidad/2022">
+         <img src="img/shared.png" title="Copiar el link">
+         <div class="footerED__linkCopy"></div>
+      </button>
+
+   </div>
+
+   <div class="separador"></div>
+
+   <!-- Fin compartir -->
+
+   <div class="footerED__infoMensajeLogoMovil">Somos <a href="https://www.escueladidactica.com/" target="_blank"><img
+            class="footerED__infoMensajeLogoImg" src="img/logoEscuelDidactica.png" alt="Escuela Didáctica"></a> y te ayudamos a transformar el aprendizaje en experiencias memorables.</div>
+
+   <!-- Footer Escuela Didactica -->
+   <footer class="footerED">
+      <!-- Mensaje info ED -->
+      <div class="footerED__infoMensajeLogo">Somos <a href="https://www.escueladidactica.com/" target="_blank"><img
+               class="footerED__infoMensajeLogoImg" src="img/logoEscuelDidactica.png" alt="Escuela Didáctica"></a> y te ayudamos a transformar el aprendizaje en experiencias memorables.</div>
+      <div class="footerED__contacto">
+         <div class="footerED__redes">
+            <span>Síguenos</span>
+            <a href="https://facebook.com/escueladidactica" target="_blank"><img src="img/facebookED.png"
+                  alt="Facebook"></a>
+            <a href="https://www.instagram.com/escueladidactica/" target="_blank"><img src="img/instagramED.png"
+                  alt="Instagram"></a>
+            <a href="https://co.linkedin.com/company/escueladidactica" target="_blank"><img src="img/linkedinED.png"
+                  alt="LinkedIn"></a>
+         </div>
+         <a class="footerED__btnContactanos" href="https://www.escueladidactica.com/contactanos/"
+            target="_blank">Contáctanos</a>
+      </div>
+      </div>
+
+   </footer>
+   <!-- Fin Footer Escuela Didactica -->
+
+   <!-- Precarga -->
+   <!-- <section class="preload js-preload">
+      <div class="preload__content">
+         <img class="preload__logo" src="img/logoEscuelDidactica.png" alt="Escuela Didáctica">
+         <div class="preload__progress">
+            <div class="preload__progressBar"></div>
+         </div>
+      </div>
+   </section> -->
+   <!-- Fin Precarga -->
+
+   <!-- Incluisión de scripts -->
+   <script src="libs/jquery.min.js"></script>
+   <script src="libs/jquery-ui.min.js"></script>
+   <script src="libs/bootstrap/bootstrap.min.js"></script>
+   <script src="js/redi.js"></script>
+   <script src="js/script.js"></script>
+
+   <!-- precargado de las imagenes -->
+   <div class="hidden">
+      <script type="text/javascript">
+         var images = new Array()
+
+         function preload() {
+            for (i = 0; i < preload.arguments.length; i++) {
+               images[i] = new Image()
+               images[i].src = preload.arguments[i]
+            }
+         }
+         preload(
+            'img/logoEscuelDidactica.jpg',
+            'img/parejas-001.png',
+            'img/parejas-002.png',
+            'img/parejas-003.png',
+            'img/parejas-004.png',
+            'img/parejas-005.png',
+            'img/parejas-006.png',
+            'img/parejas-007.png',
+            'img/parejas-008.png',
+            'img/tarjeta_cubierta.png',
+            'img/maria.png',
+            'img/jose.png',
+            'img/jesus.png',
+            'img/melchor.png',
+            'img/gaspar.png',
+            'img/baltazar.png',
+            'img/pastor.png',
+            'img/mula-buey.png',
+            'img/pesebre.png',
+            'img/escena-pesebre.png',
+            'img/shared.png',
+            'img/sharedFacebook.png',
+            'img/sharedLinkedin.png',
+            'img/sharedTwitter.png',
+            'img/sharedWhastApp.png',
+            'img/.png',
+            'img/.png',
+            'img/.png',
+            'img/.png',
+
+         )
+      </script>
+   </div>
+   <!-- Fin de precarga -->
+   <!-- Fin de scripts -->
+
+</body>
+
+</html>

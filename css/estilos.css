@@ -1,0 +1,619 @@
+:root {
+    --color1: #ffc042;
+    --color2: #BC3D2E;
+    --colorborde: hsl(38, 77%, 59%);
+    --color__background: #F2D272;
+  }
+  
+  :focus {
+    outline: none !important;
+  }
+  
+  .redi__contenido {
+    background-color: var(--color__background);
+    background-image: url(../img/estrellas-bg.png), url(../img/background.png);
+    background-size: auto 300px, cover;
+    background-repeat: repeat-x, no-repeat;
+    background-blend-mode: normal, multiply;
+  }
+  
+  /*=== NORMALIZAR ESTILOS DEL NAVEGADOR ===*/
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /*=== DISEÑO ===*/
+  /*=== UTILIDADES ===*/
+  .parejas .encabezado .ec-nombre {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .parejas .encabezado {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  
+  .parejas .encabezado .ec-nombre,
+  .parejas .parejas-contenedor-elementos {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+  .parejas .encabezado .ec-logo,
+  .parejas .encabezado .ec-der {
+    width: 15%;
+    height: 100%;
+  }
+  
+  .parejas .encabezado .ec-logo .ec-logo-img,
+  .parejas .encabezado .ec-nombre,
+  .parejas .encabezado .ec-nombre .ec-nombre-img {
+    width: auto;
+    height: 100%;
+  }
+  
+  .parejas .encabezado .ec-nombre .ec-nombre-img,
+  .parejas .parejas-contenedor-elementos {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .parejas .encabezado {
+    padding: 1.5rem;
+  }
+  
+  /*=== ANIMACIONES ===*/
+  
+  @keyframes fadeOutNegro {
+    0% {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  
+    100% {
+      background-color: var(--fondosModales);
+    }
+  }
+  
+  @keyframes entraModal {
+    0% {
+      transform: translateY(-60%);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  @-webkit-keyframes bounce-entrada {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+  
+    80% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes bounce-entrada {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+  
+    80% {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  .bounce-entrada {
+    -webkit-animation: bounce-entrada .5s ease backwards;
+    animation: bounce-entrada .5s ease backwards;
+  }
+  
+  @-webkit-keyframes difuminado-entrada {
+    0% {
+      color: transparent;
+      text-shadow: 0 0 0 transparent;
+    }
+  
+    100% {
+      color: #e69a00;
+      text-shadow: 2px 2px 0 rgba(171, 114, 0, 0.8);
+    }
+  }
+  
+  @keyframes difuminado-entrada {
+    0% {
+      color: transparent;
+      text-shadow: 0 0 0 transparent;
+    }
+  
+    100% {
+      color: #e69a00;
+      text-shadow: 2px 2px 0 rgba(171, 114, 0, 0.8);
+    }
+  }
+  
+  .fade-in-der {
+    -webkit-animation: fade-in-der .3s ease backwards;
+    animation: fade-in-der .3s ease backwards;
+  }
+  
+  .delay-0 {
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
+  }
+  
+  #game_board .row_board .card_board .face_card:before {
+    content: "";
+  }
+  
+  #game_board .row_board .card_board .face_card img {
+    -webkit-animation: bounce-entrada .4s ease backwards;
+    animation: bounce-entrada .4s ease backwards;
+  }
+  
+  #game_board .row_board:nth-child(1) .card_board:nth-child(1) .face_card img {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+  }
+  
+  #game_board .row_board:nth-child(1) .card_board:nth-child(1) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+  }
+  
+  #game_board .row_board:nth-child(1) .card_board:nth-child(2) .face_card img {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+  
+  #game_board .row_board:nth-child(1) .card_board:nth-child(2) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+  
+  #game_board .row_board:nth-child(1) .card_board:nth-child(3) .face_card img {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+  
+  #game_board .row_board:nth-child(1) .card_board:nth-child(3) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+  
+  #game_board .row_board:nth-child(1) .card_board:nth-child(4) .face_card img {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+  
+  #game_board .row_board:nth-child(1) .card_board:nth-child(4) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+  
+  #game_board .row_board:nth-child(2) .card_board:nth-child(1) .face_card img {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  
+  #game_board .row_board:nth-child(2) .card_board:nth-child(1) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+  }
+  
+  #game_board .row_board:nth-child(2) .card_board:nth-child(2) .face_card img {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+  
+  #game_board .row_board:nth-child(2) .card_board:nth-child(2) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+  
+  #game_board .row_board:nth-child(2) .card_board:nth-child(3) .face_card img {
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+  }
+  
+  #game_board .row_board:nth-child(2) .card_board:nth-child(3) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+  }
+  
+  #game_board .row_board:nth-child(2) .card_board:nth-child(4) .face_card img {
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+  }
+  
+  #game_board .row_board:nth-child(2) .card_board:nth-child(4) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+  }
+  
+  #game_board .row_board:nth-child(3) .card_board:nth-child(1) .face_card img {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+  }
+  
+  #game_board .row_board:nth-child(3) .card_board:nth-child(1) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+  }
+  
+  #game_board .row_board:nth-child(3) .card_board:nth-child(2) .face_card img {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  
+  #game_board .row_board:nth-child(3) .card_board:nth-child(2) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  
+  #game_board .row_board:nth-child(3) .card_board:nth-child(3) .face_card img {
+    -webkit-animation-delay: 1.1s;
+    animation-delay: 1.1s;
+  }
+  
+  #game_board .row_board:nth-child(3) .card_board:nth-child(3) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 1.1s;
+    animation-delay: 1.1s;
+  }
+  
+  #game_board .row_board:nth-child(3) .card_board:nth-child(4) .face_card img {
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+  }
+  
+  #game_board .row_board:nth-child(3) .card_board:nth-child(4) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+  }
+  
+  #game_board .row_board:nth-child(4) .card_board:nth-child(1) .face_card img {
+    -webkit-animation-delay: 1.3s;
+    animation-delay: 1.3s;
+  }
+  
+  #game_board .row_board:nth-child(4) .card_board:nth-child(1) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 1.3s;
+    animation-delay: 1.3s;
+  }
+  
+  #game_board .row_board:nth-child(4) .card_board:nth-child(2) .face_card img {
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+  }
+  
+  #game_board .row_board:nth-child(4) .card_board:nth-child(2) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+  }
+  
+  #game_board .row_board:nth-child(4) .card_board:nth-child(3) .face_card img {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+  }
+  
+  #game_board .row_board:nth-child(4) .card_board:nth-child(3) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+  }
+  
+  #game_board .row_board:nth-child(4) .card_board:nth-child(4) .face_card img {
+    -webkit-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+  }
+  
+  #game_board .row_board:nth-child(4) .card_board:nth-child(4) .face_card:first-child::before {
+    -webkit-animation: difuminado-entrada .4s ease backwards;
+    animation: difuminado-entrada .4s ease backwards;
+    -webkit-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+  }
+  
+  #game_board .row_board .card_board .face_card {
+    position: relative;
+  }
+  
+  #game_board .row_board .card_board .face_card::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 70px;
+    border-radius: 50%;
+    font-family: var(--fuente);
+    font-weight: bold;
+    font-size: 65px;
+    color: #007c6c;
+    text-shadow: 2px 2px 0 #49ffe8;
+  }
+  
+  /*=== PAREJAS ===*/
+  .parejas {
+    padding: 4% 1% 2%;
+  }
+  
+  .parejas .parejas-contenedor {
+    max-width: 900px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-bottom: 40px;*/
+  }
+  
+  .parejas .parejas-contenedor .inicio {
+    position: absolute;
+    bottom: 4%;
+    left: calc(5% + 25px);
+  }
+  
+  .parejas .parejas-contenedor .inicio .inicio-btn:hover {
+    top: 0;
+    -webkit-box-shadow: 0 4px 0 #188787;
+    box-shadow: 0 4px 0 #188787;
+  }
+  
+  .parejas .parejas-contenedor .inicio .inicio-btn:active {
+    top: 4px;
+    -webkit-box-shadow: 0 0 0 #188787;
+    box-shadow: 0 0 0 #188787;
+  }
+  
+  /* Reiniciar */
+  
+  .reiniciar {
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+  
+  .parejas .parejas-contenedor .recargar .recargar-btn {
+    display: flex;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    line-height: 1.2;
+    background-color: var(--color1);
+    border: 3px solid var(--colorborde);
+    padding: 15px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 0 var(--colorborde);
+    position: fixed;
+    bottom: 55px;
+    right: 10px;
+    transition: all 200ms;
+  }
+  
+  .parejas .parejas-contenedor .recargar .recargar-btn:hover {
+    bottom: 51px;
+    -webkit-box-shadow: 0 4px 0 var(--colorborde);
+    box-shadow: 0 4px 0 var(--colorborde);
+  }
+  
+  .parejas .parejas-contenedor .recargar .recargar-btn:active {
+    bottom: 51px;
+    -webkit-box-shadow: 0 0 0 var(--colorborde);
+    box-shadow: 0 0 0 var(--colorborde);
+  }
+  
+  .parejas .parejas-contenedor .recargar .recargar-btn img {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .parejas .encabezado {
+    height: 20vh;
+    max-height: 291.6px;
+    width: auto;
+  }
+  
+  .parejas .encabezado .ec-logo {
+    padding-left: 0;
+  }
+  
+  .parejas .encabezado .ec-logo .ec-logo-img {
+    max-height: 45px;
+  }
+  
+  .parejas .encabezado .ec-nombre .ec-nombre-img {
+    max-height: 140PX;
+  }
+  
+  .parejas .parejas-contenedor-elementos {
+    width: 80%;
+    padding-bottom: 80%;
+    position: relative;
+  }
+  
+  @media (max-width: 767px) {
+    .parejas .parejas-contenedor-elementos {
+      width: 95%;
+      padding-bottom: 95%;
+    }
+  }
+  
+  .hidden {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  
+  
+  .closeRedi {
+    display: block;
+    color: #fff;
+    line-height: 1.2;
+    background-color: #ff5457;
+    border-radius: 1.2em;
+    border: none;
+    padding: 8px 2em;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(1);
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform .3s;
+  }
+  
+  @media (hover) {
+    .closeRedi:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+  }
+  
+  .closeRedi:active {
+    transform: scale(0.98)
+  }
+  
+  
+  
+  
+  
+  /* Boton comenzar */
+  
+  .introduccion__btnComenzar {
+    font-size: 28px;
+  }
+  
+  .introduccion__btnContinuar {
+    font-size: 20px;
+  }
+  
+  .introduccion__btnComenzar,
+  .introduccion__btnContinuar,
+  .footer__reiniciar {
+    animation: bounceIn 1.5s backwards;
+    --btnComenzar__color: white;
+    --btnComenzar__colorFondo: #ED921F;
+    --btnComenzar__colorSombra: #d77c0e;
+    padding: 5px 1em;
+    background-color: var(--btnComenzar__colorFondo);
+    color: var(--btnComenzar__color);
+    font-weight: bold;
+    margin-top: 1rem;
+    border-radius: 2em;
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+  
+    position: relative;
+    top: -4px;
+    box-shadow: 0 8px 0 1px var(--btnComenzar__colorSombra),
+      0 6px 0 1px var(--btnComenzar__colorSombra),
+      0 4px 0 1px var(--btnComenzar__colorSombra),
+      0 2px 0 1px var(--btnComenzar__colorSombra),
+      0 0px 0 1px var(--btnComenzar__colorSombra);
+    transition: all .3s;
+    text-decoration: none;
+  }
+  
+  .footer__reiniciar {
+    --btnComenzar__color: white;
+    --btnComenzar__colorFondo: #BF0000;
+    --btnComenzar__colorSombra: #840000;
+    font-size: 20px;
+  }
+  
+  .introduccion__btnComenzar:hover,
+  .introduccion__btnContinuar:hover,
+  .footer__reiniciar:hover {
+    color: var(--btnComenzar__color);
+    text-decoration: none;
+    top: 0;
+    -webkit-box-shadow: 0 4px 0 1px var(--btnComenzar__colorSombra),
+      0 2px 0 1px var(--btnComenzar__colorSombra),
+      0 0px 0 1px var(--btnComenzar__colorSombra);
+    box-shadow: 0 4px 0 1px var(--btnComenzar__colorSombra),
+      0 2px 0 1px var(--btnComenzar__colorSombra),
+      0 0px 0 1px var(--btnComenzar__colorSombra);
+  }
+  
+  .introduccion__btnComenzar:active,
+  .introduccion__btnContinuar:active,
+  .footer__reiniciar:active {
+    top: 2px;
+    -webkit-box-shadow: 0 2px 0 1px var(--btnComenzar__colorSombra),
+      0 0px 0 1px var(--btnComenzar__colorSombra);
+    box-shadow: 0 2px 0 1px var(--btnComenzar__colorSombra),
+      0 0px 0 1px var(--btnComenzar__colorSombra);
+  }

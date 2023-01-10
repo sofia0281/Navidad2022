@@ -1,0 +1,179 @@
+button.btn,
+button.btn:focus {
+    background: #ffd200;
+    color: #e31837;
+    -webkit-box-shadow: 0 4px 0 #fca503;
+    box-shadow: 0 4px 0 #fca503;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5em;
+    padding: 2px 20px;
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s
+}
+
+button.btn:active,
+button.btn:hover {
+    background: #b9071e;
+    -webkit-box-shadow: 0 4px 0 #6b020c;
+    box-shadow: 0 4px 0 #6b020c;
+    color: #FFF
+}
+
+#game_board {
+    /* position: relative; */
+    /* display: -webkit-box; */
+    display: -ms-flexbox;
+    display: flex;
+    /* -webkit-box-orient: vertical; */
+    /* -webkit-box-direction: normal; */
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /* -webkit-box-pack: center; */
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* margin: auto; */
+    /* padding: 0.5%; */
+    /* z-index: 1; */
+    position: absolute;
+}
+
+#game_board .row_board {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0.5% 0
+}
+
+#game_board .row_board .card_board {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 0.5%;
+    -webkit-perspective: 700;
+    perspective: 700
+}
+
+#game_board .row_board .card_board>input[type=checkbox] {
+    display: none
+}
+
+#game_board .row_board .card_board .content_card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    cursor: pointer
+}
+
+#game_board .row_board .card_board .content_card .face_card {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute
+}
+
+#game_board .row_board .card_board .content_card .face_card img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position: center;
+    border-radius: 14px;
+}
+
+#game_board .row_board .card_board .content_card .face_card:last-child {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+
+#game_board .row_board .card_board>input[type=checkbox]:checked~.content_card {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+
+#game_board .row_board .card_board .open_card {
+    -webkit-transform: rotateY(180deg) !important;
+    transform: rotateY(180deg) !important
+}
+
+#game_board .row_board .card_board .close_card {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg)
+}
+
+.welcome_fade {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.welcome_fade .content_welcome {
+    position: relative;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.welcome_fade .content_welcome img {
+    margin: auto;
+    max-width: 600px;
+    width: 90%;
+    height: auto
+}
+
+.welcome_fade .content_welcome button.btn,
+.welcome_fade .content_welcome button.btn:focus {
+    position: absolute;
+    margin: auto;
+    bottom: 13%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%)
+}
+
+@media (max-width:475px) {
+    .welcome_fade .content_welcome button.btn {
+        bottom: 8%
+    }
+}
